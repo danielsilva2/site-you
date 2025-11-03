@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>you - Capture. Crie. Conecte.</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Flaticon -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.4.2/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-title {
+            font-family: 'Roboto Mono', monospace;
+        }
+        .satin-effect {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        #parallax-bg-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover;
+            filter: grayscale(1);
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        #parallax-bg-container video.active {
+            opacity: 0.6;
+        }
+        .lang-switcher button.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="text-white antialiased">
+
+    <!-- Dynamic Parallax Background -->
+    <div id="parallax-bg-container" class="fixed top-0 left-0 w-full h-full -z-10 overflow-hidden bg-black">
+        <video src="https://videos.pexels.com/video-files/6565267/6565267-hd_1920_1080_25fps.mp4" playsinline autoplay muted></video>
+        <video src="https://videos.pexels.com/video-files/2045651/2045651-hd_1920_1080_24fps.mp4" playsinline autoplay muted></video>
+        <video src="https://videos.pexels.com/video-files/8588988/8588988-hd_1920_1080_30fps.mp4" playsinline autoplay muted></video>
+    </div>
+
+    <div id="root">
+        <header class="fixed top-0 left-0 w-full z-50 satin-effect">
+            <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-3xl font-bold font-title">you</a>
+                <div class="flex items-center space-x-6">
+                    <div class="lang-switcher text-sm space-x-3 text-white">
+                        <button id="lang-pt" data-lang="pt">PT</button>
+                        <span>/</span>
+                        <button id="lang-en" data-lang="en">EN</button>
+                    </div>
+                    <div class="hidden md:flex">
+                         <a href="#cta" class="bg-white text-black px-5 py-2 rounded-full font-bold hover:bg-gray-200 transition-colors" data-lang-key="downloadNow">Baixar Agora</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="h-screen flex items-center justify-center text-center">
+                <div class="container mx-auto px-6">
+                    <div class="max-w-4xl mx-auto p-8 md:p-12 rounded-2xl satin-effect">
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black font-title uppercase tracking-wider" data-lang-key="heroTitle">Capture. Crie. Conecte.</h1>
+                        <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto" data-lang-key="heroSubtitle">Sua nova rede social minimalista para momentos com a alma de uma Polaroid.</p>
+                        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <a href="#" class="w-full sm:w-auto bg-white text-black flex items-center justify-center px-6 py-3 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors">
+                                <img src="https://cdn-icons-png.flaticon.com/512/220/220782.png" alt="Google Play logo" class="h-6 w-6 mr-3">
+                                <span data-lang-key="googlePlay">Baixe no Google Play</span>
+                            </a>
+                            <a href="#" class="w-full sm:w-auto bg-white text-black flex items-center justify-center px-6 py-3 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors">
+                                <img src="https://cdn-icons-png.flaticon.com/512/15/15476.png" alt="App Store logo" class="h-6 w-6 mr-3">
+                                <span data-lang-key="appStore">Baixe na App Store</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="bg-[#f5f5f5] text-black py-20 md:py-32">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-black font-title" data-lang-key="featuresTitle">Como funciona</h2>
+                        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto" data-lang-key="featuresSubtitle">Redescubra a magia de momentos únicos, lindamente criados.</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-12">
+                        <!-- Feature 1 -->
+                        <div class="text-center">
+                            <div class="flex items-center justify-center h-20 w-20 mx-auto bg-black text-white rounded-2xl mb-6">
+                               <i class="fi fi-sr-picture text-4xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3" data-lang-key="feature1Title">Polaroid Clássica</h3>
+                            <p class="text-gray-600" data-lang-key="feature1Desc">Abrace a icônica borda branca. Escolha entre os formatos clássico 4x4 ou cinematográfico 6x4. Adicione legendas com fontes manuscritas únicas que parecem pessoais.</p>
+                        </div>
+                        <!-- Feature 2 -->
+                        <div class="text-center">
+                            <div class="flex items-center justify-center h-20 w-20 mx-auto bg-black text-white rounded-2xl mb-6">
+                                <i class="fi fi-br-rotate-right text-4xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3" data-lang-key="feature2Title">O Verso Secreto</h3>
+                            <p class="text-gray-600" data-lang-key="feature2Desc">Um simples gesto de virar revela uma memória privada e oculta. Escreva uma mensagem secreta ou reflexão no verso da sua foto, apenas para você ou um amigo de confiança.</p>
+                        </div>
+                        <!-- Feature 3 -->
+                        <div class="text-center">
+                            <div class="flex items-center justify-center h-20 w-20 mx-auto bg-black text-white rounded-2xl mb-6">
+                                <i class="fi fi-sr-sparkles text-4xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-3" data-lang-key="feature3Title">Criação com IA</h3>
+                            <p class="text-gray-600" data-lang-key="feature3Desc">Nossa IA Gemini integrada transforma suas fotos em vídeos cinematográficos, escreve legendas poéticas para seus momentos e ajuda a criar lindas reflexões secretas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section id="cta" class="bg-black text-white py-20 md:py-32">
+                <div class="container mx-auto px-6 text-center">
+                    <h2 class="text-4xl md:text-5xl font-black font-title" data-lang-key="ctaTitle">Pronto para entrar?</h2>
+                    <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto" data-lang-key="ctaSubtitle">Comece a capturar seus momentos hoje. Baixe 'you' e encontre sua comunidade.</p>
+                    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="#" class="w-full sm:w-auto bg-white text-black flex items-center justify-center px-6 py-3 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors">
+                            <img src="https://cdn-icons-png.flaticon.com/512/220/220782.png" alt="Google Play logo" class="h-6 w-6 mr-3">
+                            <span data-lang-key="googlePlay">Baixe no Google Play</span>
+                        </a>
+                        <a href="#" class="w-full sm:w-auto bg-white text-black flex items-center justify-center px-6 py-3 rounded-full font-bold text-lg hover:bg-gray-200 transition-colors">
+                            <img src="https://cdn-icons-png.flaticon.com/512/15/15476.png" alt="App Store logo" class="h-6 w-6 mr-3">
+                            <span data-lang-key="appStore">Baixe na App Store</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="bg-black py-8">
+            <div class="container mx-auto px-6 text-center text-gray-500">
+                <p data-lang-key="footer">&copy; 2024 you Inc. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Parallax & Video Logic ---
+            const parallaxBgContainer = document.getElementById('parallax-bg-container');
+            const videos = Array.from(parallaxBgContainer.getElementsByTagName('video'));
+            let currentVideoIndex = -1;
+
+            window.addEventListener('scroll', function() {
+                const offset = window.pageYOffset;
+                parallaxBgContainer.style.transform = `translateY(${offset * 0.3}px)`;
+            });
+
+            function changeVideo() {
+                if (videos.length === 0) return;
+                if (currentVideoIndex !== -1) {
+                    videos[currentVideoIndex].classList.remove('active');
+                }
+                let newIndex;
+                do {
+                    newIndex = Math.floor(Math.random() * videos.length);
+                } while (videos.length > 1 && newIndex === currentVideoIndex);
+                currentVideoIndex = newIndex;
+                const currentVideo = videos[currentVideoIndex];
+                currentVideo.classList.add('active');
+                currentVideo.currentTime = 0;
+                currentVideo.play().catch(error => {
+                    console.log("Autoplay was prevented.", error);
+                });
+            }
+            changeVideo();
+            setInterval(changeVideo, Math.random() * (15000 - 8000) + 8000);
+
+            // --- Translation Logic ---
+            const translations = {
+                en: {
+                    downloadNow: "Download Now",
+                    heroTitle: "Capture. Create. Connect.",
+                    heroSubtitle: "Your new minimalist social network for moments with the soul of a Polaroid.",
+                    googlePlay: "Get on Google Play",
+                    appStore: "Download on App Store",
+                    featuresTitle: "How it works",
+                    featuresSubtitle: "Rediscover the magic of single moments, beautifully crafted.",
+                    feature1Title: "Classic Polaroid",
+                    feature1Desc: "Embrace the iconic white border. Choose between classic 4x4 or cinematic 6x4 formats. Add captions with unique, handwritten fonts that feel personal.",
+                    feature2Title: "The Secret Backside",
+                    feature2Desc: "A simple flip gesture reveals a private, hidden memory. Write a secret message or reflection on the back of your photo, just for you or a trusted friend.",
+                    feature3Title: "AI-Powered Creation",
+                    feature3Desc: "Our integrated Gemini AI turns your photos into cinematic videos, writes poetic captions for your moments, and helps you craft beautiful secret reflections.",
+                    ctaTitle: "Ready to join?",
+                    ctaSubtitle: "Start capturing your moments today. Download 'you' and find your community.",
+                    footer: "© 2024 you Inc. All rights reserved."
+                },
+                pt: {
+                    downloadNow: "Baixar Agora",
+                    heroTitle: "Capture. Crie. Conecte.",
+                    heroSubtitle: "Sua nova rede social minimalista para momentos com a alma de uma Polaroid.",
+                    googlePlay: "Baixe no Google Play",
+                    appStore: "Baixe na App Store",
+                    featuresTitle: "Como funciona",
+                    featuresSubtitle: "Redescubra a magia de momentos únicos, lindamente criados.",
+                    feature1Title: "Polaroid Clássica",
+                    feature1Desc: "Abrace a icônica borda branca. Escolha entre os formatos clássico 4x4 ou cinematográfico 6x4. Adicione legendas com fontes manuscritas únicas que parecem pessoais.",
+                    feature2Title: "O Verso Secreto",
+                    feature2Desc: "Um simples gesto de virar revela uma memória privada e oculta. Escreva uma mensagem secreta ou reflexão no verso da sua foto, apenas para você ou um amigo de confiança.",
+                    feature3Title: "Criação com IA",
+                    feature3Desc: "Nossa IA Gemini integrada transforma suas fotos em vídeos cinematográficos, escreve legendas poéticas para seus momentos e ajuda a criar lindas reflexões secretas.",
+                    ctaTitle: "Pronto para entrar?",
+                    ctaSubtitle: "Comece a capturar seus momentos hoje. Baixe 'you' e encontre sua comunidade.",
+                    footer: "© 2024 you Inc. Todos os direitos reservados."
+                }
+            };
+
+            const langPtBtn = document.getElementById('lang-pt');
+            const langEnBtn = document.getElementById('lang-en');
+
+            const setLanguage = (lang) => {
+                document.documentElement.lang = lang;
+                localStorage.setItem('language', lang);
+
+                document.querySelectorAll('[data-lang-key]').forEach(element => {
+                    const key = element.getAttribute('data-lang-key');
+                    if (translations[lang] && translations[lang][key]) {
+                        element.innerHTML = translations[lang][key];
+                    }
+                });
+
+                // Update active button style
+                if (lang === 'pt') {
+                    langPtBtn.classList.add('active');
+                    langEnBtn.classList.remove('active');
+                } else {
+                    langEnBtn.classList.add('active');
+                    langPtBtn.classList.remove('active');
+                }
+            };
+
+            langPtBtn.addEventListener('click', () => setLanguage('pt'));
+            langEnBtn.addEventListener('click', () => setLanguage('en'));
+
+            // Set initial language
+            const initialLang = localStorage.getItem('language') || 'pt';
+            setLanguage(initialLang);
+        });
+    </script>
+</body>
+</html>
